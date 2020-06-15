@@ -430,6 +430,7 @@ mark,
 
 .list-unstyled {
   padding-left: 0;
+  padding-bottom:0px;
   list-style: none;
 }
 
@@ -582,6 +583,7 @@ pre code {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+
 }
 
 .no-gutters {
@@ -601,10 +603,12 @@ pre code {
 .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg,
 .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl,
 .col-xl-auto {
-  position: relative;
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+    position: relative;
+    width: 100%;
+    padding-bottom: 0px;
+    padding-top 0px;
+    padding-right: 0px;
+    padding-left: 0px;
 }
 
 .col {
@@ -4584,9 +4588,49 @@ input[type="button"].btn-block {
   border-radius: 0.25rem;
 }
 
+.card:hover .card-overlay {
+   opacity: .80;
+    }
+
 .card > hr {
   margin-right: 0;
   margin-left: 0;
+}
+.card-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-top: 50%;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #808080;
+}
+.card-overlay-text {
+    color: black;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.stretched-link::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: auto;
+    content: "";
+    background-color: rgba(0,0,0,0);
 }
 
 .card > .list-group:first-child .list-group-item:first-child {
@@ -4604,6 +4648,7 @@ input[type="button"].btn-block {
   flex: 1 1 auto;
   padding: 1.25rem;
 }
+
 
 .card-title {
   margin-bottom: 0.75rem;
@@ -9883,5 +9928,7 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+   
+
 }
 /*# sourceMappingURL=bootstrap.css.map */

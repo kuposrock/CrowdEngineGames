@@ -6,6 +6,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\pictures\building.png" />
     <Content Include="Content\scrolling-nav.css" />
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
