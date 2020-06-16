@@ -2,6 +2,11 @@
 body {
     padding-top: 10px;
     padding-bottom: 10px;
+    background: url('pictures/background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
 /* Wrapping element */
@@ -11,12 +16,33 @@ body {
     padding-right: 15px;
 }
 
+.largemargin {
+    margin-top: 70px;
+}
+
 /* Set widths on the form inputs since otherwise they're 100% wide */
 input,
 select,
 textarea {
     max-width: 20px;
 }
+section {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.bg-primary {
+    background-color: #726a95 !important;
+}
+.bg-secondary {
+    background-color: #709fb0 !important;
+}
+.bg-success {
+    background-color: #a0c1b8 !important;
+}
+.bg-info {
+    background-color: #f4ebc1 !important;
+}
+
 
 
 /* Responsive: Portrait tablets and up */

@@ -5,34 +5,34 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
-  --blue: #007bff;
-  --indigo: #6610f2;
-  --purple: #6f42c1;
-  --pink: #e83e8c;
-  --red: #dc3545;
-  --orange: #fd7e14;
-  --yellow: #ffc107;
-  --green: #28a745;
-  --teal: #20c997;
-  --cyan: #17a2b8;
-  --white: #fff;
-  --gray: #6c757d;
-  --gray-dark: #343a40;
-  --primary: #007bff;
-  --secondary: #6c757d;
-  --success: #28a745;
-  --info: #17a2b8;
-  --warning: #ffc107;
-  --danger: #dc3545;
-  --light: #f8f9fa;
-  --dark: #343a40;
-  --breakpoint-xs: 0;
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #726a95;
+    --secondary: #709fb0;
+    --success: #a0c1b8;
+    --info: #f4ebc1;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 *,
@@ -4588,8 +4588,23 @@ input[type="button"].btn-block {
   border-radius: 0.25rem;
 }
 
-.card:hover .card-overlay {
-   opacity: .80;
+
+.hovercard {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
+   .hovercard:hover .card-overlay {
+        opacity: .80;
     }
 
 .card > hr {
@@ -6464,7 +6479,7 @@ a.bg-info:hover, a.bg-info:focus,
 button.bg-info:hover,
 button.bg-info:focus {
   background-color: #117a8b !important;
-}
+} 
 
 .bg-warning {
   background-color: #ffc107 !important;
@@ -6591,7 +6606,7 @@ button.bg-dark:focus {
 }
 
 .rounded {
-  border-radius: 0.25rem !important;
+  border-radius: 1rem !important;
 }
 
 .rounded-top {
