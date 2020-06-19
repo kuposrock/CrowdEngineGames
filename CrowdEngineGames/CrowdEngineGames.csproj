@@ -16,9 +16,17 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Portfolio\assets\img\favicon.ico" />
+    <Content Include="Portfolio\assets\img\profile.jpg" />
+    <Content Include="Portfolio\css\styles.css" />
+    <Content Include="Portfolio\js\scripts.js" />
+    <Content Include="Portfolio\portfolio.html" />
     <Content Include="Scripts\scrolling-nav.js" />
     <Content Include="index.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Portfolio\assets\img\Thumbs.db" />
   </ItemGroup>
 </Project>
