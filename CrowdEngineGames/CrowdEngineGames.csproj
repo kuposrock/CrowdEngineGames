@@ -26,6 +26,7 @@
     <Content Include="phplogin\register.php" />
     <Content Include="phplogin\style.css" />
     <Content Include="Portfolio\assets\img\favicon.ico" />
+    <Content Include="Portfolio\assets\img\microgameslogo.png" />
     <Content Include="Portfolio\assets\img\profile.png" />
     <Content Include="Portfolio\css\styles.css" />
     <Content Include="Portfolio\js\scripts.js" />

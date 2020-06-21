@@ -4589,53 +4589,13 @@ input[type="button"].btn-block {
 }
 
 
-.hovercard {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 0.25rem;
-}
 
-   .hovercard:hover .card-overlay {
-        opacity: .80;
-    }
 
 .card > hr {
   margin-right: 0;
   margin-left: 0;
 }
-.card-overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding-top: 50%;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: #808080;
-}
-.card-overlay-text {
-    color: black;
-    font-size: 30px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    opacity: 1;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
+
 .stretched-link::after {
     position: absolute;
     top: 0;
