@@ -16,15 +16,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="phplogin\activate.php" />
-    <Content Include="phplogin\authenticate.php" />
-    <Content Include="phplogin\home.php" />
-    <Content Include="phplogin\index.html" />
-    <Content Include="phplogin\logout.php" />
-    <Content Include="phplogin\profile.php" />
-    <Content Include="phplogin\register.html" />
-    <Content Include="phplogin\register.php" />
-    <Content Include="phplogin\style.css" />
     <Content Include="Portfolio\assets\img\favicon.ico" />
     <Content Include="Portfolio\assets\img\microgameslogo.png" />
     <Content Include="Portfolio\assets\img\profile.png" />
