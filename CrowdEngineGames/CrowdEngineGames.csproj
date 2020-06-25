@@ -7,6 +7,7 @@
   <ItemGroup>
     <Content Include="Content\pictures\background.jpg" />
     <Content Include="Content\pictures\MissileCommandGame.png" />
+    <Content Include="Portfolio\assets\img\project4.mp4" />
     <Content Include="css\mainpage.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -30,12 +31,11 @@
     <Content Include="Portfolio\assets\img\project1.png" />
     <Content Include="Portfolio\assets\img\project2.png" />
     <Content Include="Portfolio\assets\img\project3.png" />
+    <Content Include="Portfolio\assets\img\project4.png" />
     <Content Include="Portfolio\css\styles.css" />
+    <Content Include="Portfolio\Project4.html" />
     <Content Include="Portfolio\js\scripts.js" />
     <Content Include="Portfolio\index.html" />
-    <Content Include="Scripts\scrolling-nav.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="vendor\bootstrap\css\bootstrap-grid.css" />
     <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="vendor\bootstrap\css\bootstrap-reboot.css" />
