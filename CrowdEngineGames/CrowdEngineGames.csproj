@@ -5,29 +5,66 @@
     <ProjectGuid>{E002D384-CFB8-404A-84C8-4FDEE41EDE7D}</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
     <Content Include="Content\pictures\background.jpg" />
-    <Content Include="Content\pictures\building.png" />
-    <Content Include="Content\scrolling-nav.css" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\pictures\MissileCommandGame.png" />
+    <Content Include="css\mainpage.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="index.html" />
+    <Content Include="phplogin\activate.php" />
+    <Content Include="phplogin\authenticate.php" />
+    <Content Include="phplogin\home.php" />
+    <Content Include="phplogin\index.html" />
+    <Content Include="phplogin\logout.php" />
+    <Content Include="phplogin\profile.php" />
+    <Content Include="phplogin\register.html" />
+    <Content Include="phplogin\register.php" />
+    <Content Include="phplogin\style.css" />
     <Content Include="Portfolio\assets\img\favicon.ico" />
     <Content Include="Portfolio\assets\img\microgameslogo.png" />
     <Content Include="Portfolio\assets\img\profile.png" />
+    <Content Include="Portfolio\assets\img\project1.png" />
+    <Content Include="Portfolio\assets\img\project2.png" />
+    <Content Include="Portfolio\assets\img\project3.png" />
     <Content Include="Portfolio\css\styles.css" />
     <Content Include="Portfolio\js\scripts.js" />
     <Content Include="Portfolio\index.html" />
     <Content Include="Scripts\scrolling-nav.js" />
-    <Content Include="index.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="vendor\jquery\jquery.js" />
+    <Content Include="vendor\jquery\jquery.min.js" />
+    <Content Include="vendor\jquery\jquery.slim.js" />
+    <Content Include="vendor\jquery\jquery.slim.min.js" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Portfolio\assets\img\Thumbs.db" />
+    <None Include="vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <None Include="vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <None Include="vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <None Include="vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <None Include="vendor\bootstrap\css\bootstrap.css.map" />
+    <None Include="vendor\bootstrap\css\bootstrap.min.css.map" />
+    <None Include="vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <None Include="vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <None Include="vendor\bootstrap\js\bootstrap.js.map" />
+    <None Include="vendor\bootstrap\js\bootstrap.min.js.map" />
+    <None Include="vendor\jquery\jquery.min.map" />
+    <None Include="vendor\jquery\jquery.slim.min.map" />
   </ItemGroup>
+  <ItemGroup />
 </Project>

@@ -5915,6 +5915,7 @@ a.close.disabled {
   float: left;
   width: 100%;
   margin-right: -100%;
+
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   transition: transform 0.6s ease-in-out;
@@ -5970,14 +5971,15 @@ a.close.disabled {
   position: absolute;
   top: 0;
   bottom: 0;
+  background-color: #212529;
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 15%;
+  width: 10%;
   color: #fff;
   text-align: center;
-  opacity: 0.5;
+  opacity: 1;
   transition: opacity 0.15s ease;
 }
 @media (prefers-reduced-motion: reduce) {
