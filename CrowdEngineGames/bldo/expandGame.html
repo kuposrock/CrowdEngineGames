@@ -12,10 +12,127 @@
     <title>Crowd Engine Games</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/mainpage.css" rel="stylesheet" type="text/css">
-  
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/mainpage.css" rel="stylesheet" />
+    <script src="../socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="../particles.js"></script>
+    <script>
+        function updateScroll(room) {
+            room.scrollTop = room.scrollHeight;
+        }
+        $(function () {
+
+            particlesJS.load('particles-js', '../particlesjs-config.json', function () {
+                console.log('callback - particles.js config loaded');
+            });
+
+            var socket = io();
+            var $usernameForm = $('#usernameForm');
+            var $username = $('#usernameField');
+            var $messageForm = $('#messageInputForm');
+            var globalscroll = document.getElementById('RoomGlobalScroll');
+            var room1scroll = document.getElementById('ChatRoom1Scroll');
+            var room2scroll = document.getElementById('ChatRoom2Scroll');
+            var activetab = 1;
+
+            $('#GlobalChat-tab').click(function () {
+                activetab = 1;
+                updateScroll(globalscroll);
+            });
+
+            $('#Room1-tab').click(function () {
+                activetab = 2;
+                updateScroll(room1scroll);
+            });
+
+            $('#Room2-tab').click(function () {
+                activetab = 3;
+                updateScroll(room2scroll);
+            });
+
+            $messageForm.submit(function (e) {
+                e.preventDefault(); // prevents page reloading
+                socket.emit('chat message', activetab, $('#messageField').val());
+                $('#messageField').val('');
+                return false;
+            });
+
+            $usernameForm.submit(function (e) { // when user hits submit button
+                e.preventDefault();
+                socket.emit('changeUsername', activetab, $username.val());
+            });
+
+            socket.on('connect_failed', function () {
+                $('#RoomGlobal').append($('<tr>').text('The server seems to be down. Try again later.'));
+                updateScroll(globalscroll);
+            });
+
+            socket.on('connectedusers', function (usercount) {
+                $('#RoomGlobal').append($('<tr>').text('There are: ' + usercount + ' users connected.'));
+                $('#Chatroom1').append($('<tr>').text('There are: ' + usercount + ' users connected.'));
+                $('#Chatroom2').append($('<tr>').text('There are: ' + usercount + ' users connected.'));
+            });
+
+            socket.on('chat message', function (chatroom, msg) {
+                switch (chatroom) {
+                    case 1:
+                        $('#RoomGlobal').append($('<tr>').text(msg));
+                        updateScroll(globalscroll);
+                        break;
+                    case 2:
+                        $('#Chatroom1').append($('<tr>').text(msg));
+                        updateScroll(room1scroll);
+                        break;
+                    case 3:
+                        $('#Chatroom2').append($('<tr>').text(msg));
+                        updateScroll(room2scroll);
+                        break;
+                }
+                // $('#messages').append($('<tr>').text(msg).css("text-align", "center"));
+            });
+
+            var c = document.getElementById("ctx");
+            var ctx = c.getContext('2d');
+            ctx.fillStyle = "#FF0000";
+            ctx.fillRect(0, 0, 150, 75);
+
+            socket.on('playerUpdate', function (data) {
+                ctx.clearRect(0, 0, 300, 300);
+                for (var i = 0; i < data.length; i++)
+                    ctx.fillText(data[i].id, data[i].x, data[i].y);
+            });
+
+            document.onkeydown = function (event) {
+                if (event.keyCode === 68)     //d
+                    socket.emit('keyPress', { inputId: 'right', state: true });
+                else if (event.keyCode === 83)   //s
+                    socket.emit('keyPress', { inputId: 'down', state: true });
+                else if (event.keyCode === 65) //a
+                    socket.emit('keyPress', { inputId: 'left', state: true });
+                else if (event.keyCode === 87) // w
+                    socket.emit('keyPress', { inputId: 'up', state: true });
+
+
+            }
+            document.onkeyup = function (event) {
+                if (event.keyCode === 68)    //d
+                    socket.emit('keyPress', { inputId: 'right', state: false });
+                else if (event.keyCode === 83)   //s
+                    socket.emit('keyPress', { inputId: 'down', state: false });
+                else if (event.keyCode === 65) //a
+                    socket.emit('keyPress', { inputId: 'left', state: false });
+                else if (event.keyCode === 87) // w
+                    socket.emit('keyPress', { inputId: 'up', state: false });
+            }
+        });
+       
+
+    </script>
+
 </head>
+
+
 
 <body class="bg-main">
     <!-- Navigation -->
@@ -62,19 +179,16 @@
 
         <!-- Welcome Area Div -->
         <div class="row pills">
-            <div class="col-4 py-2">
+            <!-- Game Area -- Java Script-->
+            <div class="col-8 py-2 width: 16rem;">
+                <!-- Game Area CANVAS -->
+                <h1>Under Development</h1>
+                <canvas id="ctx"></canvas>
 
-                <h2>Welcome</h2>
-                <hr>
-                <p>
-                    Crowd Engine Games was designed to connect users together. With a crowd, Crowd Engine Games can be a success.
-                    A player can simply connect to another player by clicking a game below.
-                    In time, this page will be filled with tons of simple online multiplayer games.
-                </p>
             </div>
 
             <!-- Chat Area DIV -->
-            <div class="col-8">
+            <div class="col-4">
                 <h2 class="pl-3">Crowd Chat</h2>
                 <form id="usernameForm">
                     <div class="input-group mb-3">
@@ -135,111 +249,12 @@
                     </div>
                 </form>
                 <!--Chat Javascript code-->
-                <script src="/socket.io/socket.io.js"></script>
-                <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-                <script src="particles.js"></script>
-                <script>
-                    //document.getElementById("").style.height = "200px";
-                    function updateScroll(room) {
-                        room.scrollTop = room.scrollHeight;
-                    }
-                    $(function () {
 
-                        particlesJS.load('particles-js', 'particlesjs-config.json', function () {
-                            console.log('callback - particles.js config loaded');
-                        });
-                        var socket = io();
-                        var $usernameForm = $('#usernameForm');
-                        var $username = $('#usernameField');
-                        var $messageForm = $('#messageInputForm');
-                        var globalscroll = document.getElementById('RoomGlobalScroll');
-                        var room1scroll = document.getElementById('ChatRoom1Scroll');
-                        var room2scroll = document.getElementById('ChatRoom2Scroll');
-                        var activetab = 1;
-
-                        $('#GlobalChat-tab').click(function () {
-                            activetab = 1;
-                            updateScroll(globalscroll);
-                        });
-
-                        $('#Room1-tab').click(function () {
-                            activetab = 2;
-                            updateScroll(room1scroll);
-                        });
-
-                        $('#Room2-tab').click(function () {
-                            activetab = 3;
-                            updateScroll(room2scroll);
-                        });
-
-                        $messageForm.submit(function (e) {
-                            e.preventDefault(); // prevents page reloading
-                            socket.emit('chat message', activetab, $('#messageField').val());
-                            $('#messageField').val('');
-                            return false;
-                        });
-
-                        $usernameForm.submit(function (e) { // when user hits submit button
-                            e.preventDefault();
-                            socket.emit('changeUsername', activetab, $username.val());
-                        });
-
-                        socket.on('connect_failed', function () {
-                            $('#RoomGlobal').append($('<tr>').text('The server seems to be down. Try again later.'));
-                            updateScroll(globalscroll);
-                        });
-
-                        socket.on('connectedusers', function (usercount) {
-                            $('#RoomGlobal').append($('<tr>').text('There are: ' + usercount + ' users connected.'));
-                            $('#Chatroom1').append($('<tr>').text('There are: ' + usercount + ' users connected.'));
-                            $('#Chatroom2').append($('<tr>').text('There are: ' + usercount + ' users connected.'));
-                        });
-
-                        socket.on('chat message', function (chatroom, msg) {
-                            switch (chatroom) {
-                                case 1:
-                                    $('#RoomGlobal').append($('<tr>').text(msg));
-                                    updateScroll(globalscroll);
-                                    break;
-                                case 2:
-                                    $('#Chatroom1').append($('<tr>').text(msg));
-                                    updateScroll(room1scroll);
-                                    break;
-                                case 3:
-                                    $('#Chatroom2').append($('<tr>').text(msg));
-                                    updateScroll(room2scroll);
-                                    break;
-                            }
-                            // $('#messages').append($('<tr>').text(msg).css("text-align", "center"));
-                        });
-                    });
-                </script>
+                
             </div>
         </div>
 
-        <!--@@@@@@@@@@@@@ Game card Row  @@@@@@@@@@@@@@@@ -->
 
-
-        <div class="row pills py-2">
-            <div class="col-12">
-                <h2>Games</h2>
-                <hr>
-            </div>
-            <div class="col-auto mb-3">
-                <div class="card border-dark rounded" style="width: 16rem;">
-                    <img class="card-img-container" src="Content/pictures/MissileCommandGame.png" />
-                    <div class="card-body">
-                        <h4 class="card-title">BLDO</h4>
-                        <p class="card-text">Become Larger by Deafeating Opponents</p>
-                    </div>
-                    <div class="card-overlay">
-                        <p class="card-overlay-text">Work in progress</p>
-                        <a href="/bldo/expandGame.html" class="stretched-link"></a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
 
         <!--@@@@@@@@@@@@@ Conact Row @@@@@@@@@@@@@@@@ -->
 
@@ -268,8 +283,9 @@
             <!-- /.container -->
         </footer>
         <!-- Bootstrap core JavaScript -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="../vendor/jquery/jquery.min.js"></script>
+
+        <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     </div>
 </body>
 

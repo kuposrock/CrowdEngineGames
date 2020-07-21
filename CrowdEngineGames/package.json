@@ -1,0 +1,17 @@
+{
+  "name": "testweb",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node": "^14.4.0",
+    "particles.js": "^2.0.0",
+    "socket.io": "^2.3.0"
+  }
+}

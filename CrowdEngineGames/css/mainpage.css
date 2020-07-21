@@ -6,16 +6,18 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    color: black;
+    border: solid;
 }
 .bg-main {
-    background-color:aliceblue;
+    background-color: rgba(0, 0, 0, 0.075);
 
 }
 .card-size-fixed {
     
     clip: rect(0px,300px,200px,0px);
     width: 100%;
-    height:200px;
+    height:150px;
 }
 
 .card-img-container {
@@ -79,4 +81,74 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
+}
+
+.border {
+    color: black;
+    border:solid;
+}
+
+.my-custom-scrollbar {
+    height: 200px;
+    min-height: 200px;
+    overflow-y:scroll;
+}
+
+
+
+.simplebox {
+    outline: none;
+    border: solid 1px black;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    width:auto;
+}
+
+input.simplebox:focus {
+    border: solid 1px black;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    transition: none;
+    -moz-transition: none;
+    -webkit-transition: none;
+}
+tr{
+    word-wrap:hyphenate;
+
+}
+
+
+a.active {
+    font-weight: bold;
+    color: orangered;
+}
+
+.pills {
+    border: groove 2px rgba(82, 81, 81, 0.74);
+    background-color: rgba(210, 221, 221, 0.5);
+    border-radius: 2rem;
+    margin: 1rem;
+}
+
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#particles-js canvas{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#ctx {
+    position: inherit;
+    background-color: White;
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
 }
